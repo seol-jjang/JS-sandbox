@@ -10,11 +10,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  .raffleBtn {
+  .raffle-btn {
     margin-top: 30px;
   }
 }
-.choice .number-select {
+.choice .number-btn {
   display: grid;
   grid-template-columns: repeat(7, 40px);
   justify-content: center;

@@ -1,5 +1,5 @@
 const numbers = document.querySelectorAll(".num");
-const raffleBtn = document.querySelector(".raffleBtn");
+const raffleBtn = document.querySelector(".raffle-btn");
 const replayBtn = document.querySelector(".replay");
 const choiceSection = document.querySelector(".choice");
 const resultSection = document.querySelector(".result");
@@ -7,26 +7,26 @@ const lottoDiv = document.querySelector(".lotto-ball");
 const choiceDiv = document.querySelector(".choice-number");
 
 const SELECTED = "selected";
-const MAX_COUNT = 1; //선택숫자 개수 조정
+const MAX_COUNT = 6; //선택숫자 개수 조정
 
-const randomList = [];
-const equalList = [];
+const selectedList = [];
 let count = 0;
-let selectNumber = 0;
+let lottoNumber = 0;
 
 const printList = (result) => {
-  const lottoUl = document.createElement("ul");
-  lottoDiv.append(lottoUl);
+  const lottoText = document.createElement("p");
+  lottoText.innerText = lottoNumber;
+  lottoDiv.append(lottoText);
 
-  for (i = 0; i < randomList.length; i++) {
-    const lottoLi = document.createElement("li");
+  const selectUl = document.createElement("ul");
+  choiceDiv.append(selectUl);
 
-    lottoLi.append(randomList[i]);
-    lottoUl.append(lottoLi);
+  for (i = 0; i < selectedList.length; i++) {
+    const selectLi = document.createElement("li");
+
+    selectLi.innerText = selectedList[i];
+    selectUl.append(selectLi);
   }
-  const text = document.createElement("p");
-  text.innerText = selectNumber;
-  choiceDiv.append(text);
 
   const resultText = document.createElement("p");
   resultSection.append(resultText);
@@ -38,13 +38,24 @@ const printList = (result) => {
 };
 
 const randomNumber = () => {
-  return Math.floor(Math.random() * 20 + 1);
+  return Math.floor(Math.random() * 49 + 1);
 };
 
 const calculate = () => {
-  const selectedButton = document.querySelector(".selected");
-  selectNumber = Number(selectedButton.value);
+  const selectedButton = document.querySelectorAll(".selected");
+  selectedButton.forEach((number) => {
+    selectedList.push(Number(number.value));
+  });
 
+  lottoNumber = randomNumber();
+
+  if (selectedList.indexOf(lottoNumber) < 0) {
+    printList(false);
+  } else {
+    printList(true);
+  }
+  //랜덤번호 6개 뽑을 때
+  /*
   let i = 0;
   while (i < 6) {
     let random = randomNumber();
@@ -53,14 +64,10 @@ const calculate = () => {
       i++;
     }
   }
-  if (randomList.indexOf(selectNumber) < 0) {
-    printList(false);
-  } else {
-    printList(true);
-  }
+  */
 };
 
-const startRaffle = () => {
+const startLotto = () => {
   if (count < MAX_COUNT) {
     return;
   }
@@ -91,7 +98,7 @@ const init = () => {
   numbers.forEach((number) => {
     number.addEventListener("click", selectedNumber);
   });
-  raffleBtn.addEventListener("click", startRaffle);
+  raffleBtn.addEventListener("click", startLotto);
   replayBtn.addEventListener("click", () => {
     window.location.reload();
   });
