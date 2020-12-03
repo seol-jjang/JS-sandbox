@@ -9,7 +9,8 @@
 <body>
     <div class="wrap">
         <section class="choice">
-            <div class="number-btn">
+            <h4>숫자 선택 (최대 6개)</h4>
+            <div class="number-wrap">
                 <button class="num num_1" value="1">1</button>
                 <button class="num num_2" value="2">2</button>
                 <button class="num num_3" value="3">3</button>
@@ -60,14 +61,16 @@
                 <button class="num num_48" value="48">48</button>
                 <button class="num num_49" value="49">49</button>
             </div>
-            <button class="raffle-btn">추첨</button>
+            <button class="btn raffle-btn">선택완료</button>
         </section>
         <section class="result">
-            <div class="lotto-ball"></div>
+            <div class="lotto-ball">
+                <h3>당첨 번호</h3>
+            </div>
             <div class="choice-number">
                 <h4>선택한 번호</h4>
             </div>
-            <button class="replay">다시하기</button>
+            <button class="btn replay">다시하기</button>
         </section>
     </div>
     <script src="src/js/lotto.js"></script>

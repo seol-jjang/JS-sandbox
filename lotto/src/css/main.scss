@@ -3,43 +3,118 @@
 }
 .wrap {
   width: 400px;
-  margin: 0 auto;
+  height: 100%;
+  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn {
+  cursor: pointer;
+  padding: 13px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background-color: #2583ff;
+  color: white;
+  font-size: 16px;
+  transition: background-color 0.3s linear;
+  &:hover {
+    background-color: #006eff;
+  }
 }
 .choice {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  h4 {
+    font-size: 20px;
+  }
   .raffle-btn {
+    width: 100%;
     margin-top: 30px;
   }
 }
-.choice .number-btn {
+.choice .number-wrap {
   display: grid;
-  grid-template-columns: repeat(7, 40px);
+  grid-template-columns: repeat(7, 1fr);
+  align-content: center;
   justify-content: center;
-  gap: 10px;
+  gap: 5px;
   .num {
-    width: 40px;
+    width: 50px;
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 2px solid #ddd;
+    border-radius: 5px;
     background-color: white;
     font-size: 18px;
     color: #ddd;
     outline: none;
     cursor: pointer;
+    &:hover {
+      border-color: #2583ff;
+      color: #2583ff;
+    }
   }
   .selected {
-    border-color: black;
-    color: black;
+    border-color: #2583ff;
+    color: #2583ff;
   }
 }
 
 .result {
+  width: 100%;
   display: none;
+  flex-direction: column;
+  .lotto-ball {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 30px;
+    p {
+      width: 100px;
+      height: 100px;
+      margin-top: 0;
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background-color: #2583ff;
+      color: white;
+    }
+  }
+  .choice-number {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h4 {
+      font-size: 30px;
+      margin-bottom: 0;
+    }
+    ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      li {
+        width: 60px;
+        height: 60px;
+        margin-right: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color: #ffcc25;
+        color: white;
+        font-size: 18px;
+      }
+    }
+  }
 }
 
 @keyframes fade-in {

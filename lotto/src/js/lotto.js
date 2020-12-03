@@ -29,7 +29,7 @@ const printList = (result) => {
   }
 
   const resultText = document.createElement("p");
-  resultSection.append(resultText);
+  choiceDiv.append(resultText);
   if (result) {
     resultText.innerText = "당첨!";
   } else {
@@ -75,7 +75,7 @@ const startLotto = () => {
   resultSection.style.animation = "fade-in 0.5s forwards";
   setTimeout(() => {
     choiceSection.style.display = "none";
-    resultSection.style.display = "block";
+    resultSection.style.display = "flex";
   }, 500);
   calculate();
 };

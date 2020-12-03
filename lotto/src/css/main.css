@@ -3,39 +3,105 @@
 
 .wrap {
   width: 400px;
-  margin: 0 auto; }
+  height: 100%;
+  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.btn {
+  cursor: pointer;
+  padding: 13px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background-color: #2583ff;
+  color: white;
+  font-size: 16px;
+  transition: background-color 0.3s linear; }
+  .btn:hover {
+    background-color: #006eff; }
 
 .choice {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center; }
+  .choice h4 {
+    font-size: 20px; }
   .choice .raffle-btn {
+    width: 100%;
     margin-top: 30px; }
 
-.choice .number-btn {
+.choice .number-wrap {
   display: grid;
-  grid-template-columns: repeat(7, 40px);
+  grid-template-columns: repeat(7, 1fr);
+  align-content: center;
   justify-content: center;
-  gap: 10px; }
-  .choice .number-btn .num {
-    width: 40px;
+  gap: 5px; }
+  .choice .number-wrap .num {
+    width: 50px;
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 2px solid #ddd;
+    border-radius: 5px;
     background-color: white;
     font-size: 18px;
     color: #ddd;
     outline: none;
     cursor: pointer; }
-  .choice .number-btn .selected {
-    border-color: black;
-    color: black; }
+    .choice .number-wrap .num:hover {
+      border-color: #2583ff;
+      color: #2583ff; }
+  .choice .number-wrap .selected {
+    border-color: #2583ff;
+    color: #2583ff; }
 
 .result {
-  display: none; }
+  width: 100%;
+  display: none;
+  flex-direction: column; }
+  .result .lotto-ball {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 30px; }
+    .result .lotto-ball p {
+      width: 100px;
+      height: 100px;
+      margin-top: 0;
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background-color: #2583ff;
+      color: white; }
+  .result .choice-number {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    .result .choice-number h4 {
+      font-size: 30px;
+      margin-bottom: 0; }
+    .result .choice-number ul {
+      display: flex;
+      list-style: none;
+      padding: 0; }
+      .result .choice-number ul li {
+        width: 60px;
+        height: 60px;
+        margin-right: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color: #ffcc25;
+        color: white;
+        font-size: 18px; }
 
 @keyframes fade-in {
   0% {
