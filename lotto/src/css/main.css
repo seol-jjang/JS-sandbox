@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box; }
+
+.wrap {
+  width: 400px;
+  margin: 0 auto; }
+
+.choice {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .choice .raffleBtn {
+    margin-top: 30px; }
+
+.choice .number-select {
+  display: grid;
+  grid-template-columns: repeat(7, 40px);
+  justify-content: center;
+  gap: 10px; }
+  .choice .number-select .num {
+    width: 40px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #ddd;
+    background-color: white;
+    font-size: 18px;
+    color: #ddd;
+    outline: none;
+    cursor: pointer; }
+  .choice .number-select .selected {
+    border-color: black;
+    color: black; }
+
+.result {
+  display: none; }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fade-out {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
